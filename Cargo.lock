@@ -345,6 +345,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "libpulse-sys"
+version = "1.20.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2191e6880818d1df4cf72eac8e91dce7a5a52ba0da4b2a5cdafabc22b937eadb"
+dependencies = [
+ "libc",
+ "num-derive",
+ "num-traits",
+ "pkg-config",
+ "winapi",
+]
+
+[[package]]
 name = "lock_api"
 version = "0.4.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -943,6 +956,7 @@ name = "synchro"
 version = "0.1.0"
 dependencies = [
  "client",
+ "libpulse-sys",
  "middleware",
  "protocol",
  "server",

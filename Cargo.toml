@@ -12,3 +12,5 @@ server = {path = "server"}
 client = {path = "client"}
 tui = {path = "tui"}
 middleware = {path = "middleware"}
+
+pulse = {version = "1.20.1", package = "libpulse-sys"}

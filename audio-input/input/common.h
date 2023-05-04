@@ -16,35 +16,36 @@
 #define BUFFER_SIZE 512
 
 struct audio_data {
-    double *cava_in;
+  double *cava_in;
 
-    int input_buffer_size;
-    int cava_buffer_size;
+  int input_buffer_size;
+  int cava_buffer_size;
 
-    int format;
-    unsigned int rate;
-    unsigned int channels;
-    char *source;  // alsa device, fifo path or pulse source
-    int im;        // input mode alsa, fifo, pulse, portaudio, shmem or sndio
-    int terminate; // shared variable used to terminate audio thread
-    char error_message[1024];
-    int samples_counter;
-    int IEEE_FLOAT;
-    pthread_mutex_t lock;
+  int format;
+  unsigned int rate;
+  unsigned int channels;
+  char *source;  // alsa device, fifo path or pulse source
+  int im;        // input mode alsa, fifo, pulse, portaudio, shmem or sndio
+  int terminate; // shared variable used to terminate audio thread
+  char error_message[1024];
+  int samples_counter;
+  int IEEE_FLOAT;
+  pthread_mutex_t lock;
 };
 
 struct audio_out {
-    double *stream;
-    int buffer_size;
+  double *stream;
+  int buffer_size;
 
-    int format;
-    unsigned int rate;
-    unsigned int channels;
+  int format;
+  unsigned int rate;
+  unsigned int channels;
 
-    char *source;
-    int im;
-    char error_message[1024];
-    int sample_counter;
+  char *source;
+  int im;
+  char error_message[1024];
+  int terminate;
+  int sample_counter;
 };
 
 void reset_output_buffers(struct audio_data *data);
